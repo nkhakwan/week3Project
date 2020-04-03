@@ -79,47 +79,37 @@ var stringInsertor = function(justNumbers){
 
 
 //// ============== function lag insertor ===============================
-
-
 var lagInsertor = function(justNumbers){
   var storingArray =[];
   var splittedNumbers = justNumbers.split(',');
-  //alert (splittedNumbers);
     for (var i = 0; i < splittedNumbers.length; i=i+1){
-      //alert(splittedNumbers.length);
-      //var singleNumber = splittedNumbers[i].split(',');
       var singleNumber = splittedNumbers[i];
       var singleSplitted = singleNumber.split('');
-     // alert(singleSplitted.length);
-     // alert(singleSplitted);
-      //alert(singleSplitted[0]);
-      //alert(singleSplitted[1]);
-      //alert(single)
+     // alert(parseInt(singleSplitted[0]));
+      //alert(parseInt(singleSplitted[1]));
+      if ((parseInt(singleSplitted[0]) || parseInt(singleSplitted[1])) === 1 || parseInt((singleSplitted[0]) || parseInt(singleSplitted[1])) === 2 || parseInt((singleSplitted[0]) || parseInt(singleSplitted[1])) === 3){
         for (var j=0; j<singleSplitted.length ; j= j+1){
-          //alert(j);
-          //alert(singleSplitted[j]);
+          var tempStorage;
           if (parseInt(singleSplitted[j]) === 1) {
-            storingArray[i] = "Beep!";
-            //alert("first If" + singleSplitted[j]);
-            //break;
+            tempStorage = "Beep!";
           } else if (parseInt(singleSplitted[j]) === 2) {
-            //alert("second");
-            storingArray[i] = "Boop!";
-            //break;
+            tempStorage = "Boop!";
             } else if (parseInt(singleSplitted[j]) === 3) {
-             // alert("third")
-              storingArray[i] = "Won't you be my neighbour!";
-              //break
+              tempStorage = "won't you be my nieghbour!";
             } else {
               //alert("didn't entered");
-                storingArray[i] = splittedNumbers[i];
+                var field = field +1;
               }
-           //alert(storingArray);
+              storingArray[i] = tempStorage;
         } //end of second for loop
-          
-    }// end of first for loop
+        
+    } else {
+    storingArray[i] = splittedNumbers[i];
+    }
+    }// end of first for loop 
     return storingArray;
 }// end of function
+
 
 //// =========== Jquery section ================================
 
