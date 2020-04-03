@@ -22,9 +22,11 @@ var rangeGen = function(aNumber){
   for (var i=0; i<(aNumber+1); i=i+1){
     alert('value of i'+ i);
     rang.push(i);
+    var rangg = rang.join();
     alert(rang);
+    alert(rangg);
   } // end of for loop
-  return rang;
+  return rangg;
 } // end of rangeGen function.
 // var finalResult = rangeGen(33);
 
