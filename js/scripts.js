@@ -1,17 +1,8 @@
-/*
-word = word.length == 1 ? word + "way" : word + "ay";
-we need to fill this up later.
-}*/
-
 var mainFunction = function(yourNumber, dominantProgression){
-  //alert(yourNumber);
   var rangeVar = rangeGen(yourNumber);
-  //alert(rangeVar);
-  return dominantProgression ?  lagInsertor(rangeVar)  : stringInsertor(rangeVar);
   var result = stringInsertor(rangeVar);
-  //alert(result);
 return result; 
-} // end of mainFaunction 
+}
 
 
 
@@ -19,24 +10,66 @@ return result;
 
 
 var rangeGen = function(aNumber){
-  //alert("on the first line");
   var rang = [];
   for (var i=0; i<(aNumber+1); i=i+1){
-    //alert('value of i'+ i);
     rang.push(i);
     var rangg = rang.join();
-   // alert(rang);
-   // alert(rangg);
-  } // end of for loop
+  } 
   return rangg;
-} // end of rangeGen function.
-// var finalResult = rangeGen(33);
+} 
+
 
 
 /// ============== stringInsertor function ============================================
-
-
 var stringInsertor = function(justNumbers){
+  var storingArray =[];
+  var splittedNumbers = justNumbers.split(',');
+    for (var i = 0; i < splittedNumbers.length; i=i+1){
+      var singleNumber = splittedNumbers[i];
+      var singleSplitted = singleNumber.split('');
+      var number3Found = false;
+      var number2Found = false;
+      var number1Found = false;
+      var noNumberFound = false;
+        for (var j=0; j<singleSplitted.length ; j= j+1){
+          if (parseInt(singleSplitted[j]) === 3) {
+            number3Found = true;
+          } else if (parseInt(singleSplitted[j]) === 2) {
+            number2Found = true;
+            } else if (parseInt(singleSplitted[j]) === 1) {
+              number1Found = true;
+            } else {
+                noNumberFound =true;
+              }
+        } 
+      if (number3Found){
+        storingArray[i] = "won't you be my neighbour!";
+      } else if(number2Found){
+          storingArray[i] = "Boop";
+        } else if(number1Found){
+            storingArray[i] = "Beep!";
+          } else {
+            storingArray[i] = splittedNumbers[i];
+            } 
+    }
+    return storingArray;
+}
+
+
+//// =========== Jquery section ================================
+
+
+$(document).ready(function() {
+  $("form#inputAndOutput").submit(function(event){
+     event.preventDefault();
+     var yourNumber = parseInt($("#yourNumber").val());
+     var dominantProgression = parseInt($("#dominantProgression").val());
+     var finalResult = mainFunction(yourNumber, dominantProgression);
+     $("#output").text(finalResult);
+     });
+ });
+
+/*var stringInsertor = function(justNumbers){
   var storingArray =[];
   var splittedNumbers = justNumbers.split(',');
   //alert (splittedNumbers);
@@ -108,21 +141,57 @@ var lagInsertor = function(justNumbers){
     }
     }// end of first for loop 
     return storingArray;
-}// end of function
+}// end of function*/
 
 
-//// =========== Jquery section ================================
 
 
-$(document).ready(function() {
-  $("form#inputAndOutput").submit(function(event){
-     //alert("we are at the beginning of submit block");
-     event.preventDefault();
-     var yourNumber = parseInt($("#yourNumber").val());
-     var dominantProgression = parseInt($("#dominantProgression").val());
-     //alert(yourNumber);  // for debugging
-     var finalResult = mainFunction(yourNumber, dominantProgression);
-     //var result = stateMent(courseType, highSchool, javaScript, engineeringDegree, interest, aptitude);
-     $("#output").text(finalResult);
-     });
- });
+
+
+/*var stringInsertor = function(justNumbers){
+  alert("i have entered");
+  var storingArray =[];
+  var splittedNumbers = justNumbers.split(',');
+  //alert (splittedNumbers);
+    for (var i = 0; i < splittedNumbers.length; i=i+1){
+      //alert(splittedNumbers.length);
+      //var singleNumber = splittedNumbers[i].split(',');
+      var singleNumber = splittedNumbers[i];
+      var singleSplitted = singleNumber.split('');
+      //alert(singleSplitted);
+      var number3Found = false;
+      var number2Found = false;
+      var number1Found = false;
+      var noNumberFound = false;
+      singleSplitted.forEach(function(eachNumber){
+        if (eachNumber === 3){
+          number3Found = true;
+        } else if (eachNumber === 2){  
+          number2Found = true;
+          } else if (eachNumber === 1){
+            number1Found = true;
+            } else {
+            noNumberFound = true;
+              }
+      });
+      alert(number3Found);
+      if (number3Found){
+        storingArray[i] = "won't you be my neighbour!";
+      } else if(number2Found){
+          storingArray[i] = "Boop";
+        } else if(number1Found){
+            storingArray[i] = "Beep!";
+          } else {
+            storingArray[i] = splittedNumbers[i];
+            } 
+    }// end of first for loop
+    return storingArray;
+}// end of function*/
+
+
+
+
+
+
+
+
