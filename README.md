@@ -1,17 +1,69 @@
-# KhanSahab
-# Epicodus Week 3 Project
-### Description
-##### This takes a number and a mode of 0 or 1(mode is an enhancement and extra to work requirement) and produces series of numbers from 0 till inputted number with all the numbers having digits 1,2 or 3 replaced with funny string.
-# Set up and instructions
-* ## Mode 0
-##### Input any number. And input 0 for the mode. If the number has 1, it'll be replaced by "BEEP!, for 2 "BOOP! and for 3 "Won't you be my neighbour. If the number has more than one combination of 1,2 and 3, it'll follow what comes first in 123 and would replace the string accordingly.
-* ## Mode 1
-##### Input number **ONLY** till 39. And select 1 in the mode. This is an extra work. It does the same as in mode 0 but if there is more than one combination of digits 1, 2 or 3, it sees what is the last digit from 1,2 or 3 and replaces the string accordingly. In mode 0, 12 would be replaced by "BEEP" but in mode 1, it'll be replaced by "BOOP".
-[Click here](https://nkhakwan.github.io/week3Project/) to try it yourself
+# _Mr Robogar's Neighbourhood_
 
-# Copyright@ Epicodus
+#### _Epicodus Week 3 Project_
 
-## Need to update it
+#### By _**KhaanSahab**_
+
+## Description
+
+_This website takes a number and replays a full range of numbers from 0 till the inputted number with any number containing 1,2 or 3 being replaced by funny strings; their are rules for which string is replaced. Numbers could be any number of digits long_
+
+## Setup/Installation Requirements
+
+* Clone this repository.
+* Navigate to index.html file.
+* Right click and open in the browser of your choice.
+
+* Alternatively, open the webpage at [click here](https://nkhakwan.github.io/week3Project/)
+
+## Known Bugs
+
+None so far. Original project was done with not understanding the rules for stings replacement. The original project was completed successfully according to the perceived rules. And that was much difficult to complete than this one. Anyways code related to original project has been commented out but some of it is present in commented form.
+
+## Support and contact details
+
+_Have a bug or an issue with this application? call 999-503-9999_
+
+## Technologies Used
+
+HTML,
+CSS,
+Bootstrap,
+Git and GitHub,
+JavaScript Loops and Arrays and if statements,
+jQuery
+
+### Specs Input
+| Spec | Input | result |
+| :-------------  | :-----------------------------------------------------| :----------------------------------------|
+| **Number input window**  | User Input:"any Number" | Output: "Full range of numbers from 0 to that number with numbers containing 1, 2 and three replaced by funny strings" |
+| **replaced numbers case one** | Input "any number" | Output: "numbers containing one is replaced by BEEP!, numbers containing two are replaced by BOOB! and numbers containing 3 is replaced by "won't you be my neighbour!". Rest remain same|
+| **Case two** | User Input: "numbers containg all or two of 1,2 and 3| Output : All those numbers to be replaced by strings corresponding to most significant of the three numbers present. Example 12 would be replaced by string corresponding to 2. and 13 corresponding to 3 |
+
+### License
+This software is licensed under the Epicodus inc license.
+
+Copyright (c) 2020 **_Khan Sahab_**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
